@@ -1,0 +1,8 @@
+{
+  "standardOrder": {
+    "env": "STAGE",
+    "soldToParty": "QA_CUST_900",
+    "material": "QA_MAT_55",
+    "quantity": 5
+  }
+}

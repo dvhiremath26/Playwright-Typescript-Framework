@@ -1,0 +1,38 @@
+{
+  "name": "tcoe-playwright-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky",
+    "check-only": "git diff --cached --name-only | grep -E \"\\.(js|ts|jsx|tsx)$\" | xargs -r grep -l -E \"(test|describe|it)\\.only\" && (echo ❌ Commit blocked: test.only or .only found in staged files && exit 1) || echo ✅ No .only found in staged files.",
+    "pre-commit": "npm run check-only && lint-staged",
+    "lint": "eslint \"**/*.ts\" --fix",
+    "format": "prettier --write \"**/*.{ts,json}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@playwright/cli": "^0.1.19",
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.48.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "typescript": "^7.0.2",
+    "winston": "^3.17.0"
+  }
+}

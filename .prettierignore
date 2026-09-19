@@ -1,0 +1,30 @@
+# Node
+node_modules
+package-lock.json
+
+# Build output
+dist
+build
+coverage
+
+# Playwright artifacts
+playwright-report
+test-results
+
+# Logs
+*.log
+
+# Env files
+.env
+.env.*
+
+# Legacy or backup folders
+_backup
+_tests_old
+k8s
+
+# Ignore ESLint config if JS formatting causes issues
+eslint.config.mts
+
+# Ignore snapshots (if using Jest or Playwright snapshot testing)
+*.snap

@@ -1,0 +1,8 @@
+{
+  "standardOrder": {
+    "env": "DEV",
+    "soldToParty": "DEV_CUST_101",
+    "material": "DEV_MAT_01",
+    "quantity": 2
+  }
+}
