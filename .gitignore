@@ -3,6 +3,9 @@
 node_modules/
 /test-results/
 /reports/
+/TCOE-Report/
+/results/
+/.xray-contract-*/
 /.ai/
 /.testwright/
 /playwright-report/

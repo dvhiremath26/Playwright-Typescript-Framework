@@ -469,6 +469,8 @@ class CustomSEReporter implements Reporter {
       }
       const html = this.generateHTMLRealTime()
       fs.writeFileSync(this.outputFile, html)
+      // Keep the latest entry point self-contained during execution as well.
+      fs.writeFileSync(path.join(reportDir, 'index.html'), html)
     } catch (error) {
       console.error('Real-time report update failed:', error)
     }
@@ -988,11 +990,9 @@ class CustomSEReporter implements Reporter {
     fs.writeFileSync(this.outputFile, html)
 
     const indexPath = path.join(reportDir, 'index.html')
-    const latestRedirect = `<!DOCTYPE html>
-<html><head><meta http-equiv="refresh" content="0;url=${path.basename(this.outputFile)}">
-<title>SE Report - Latest</title></head>
-<body><p>Redirecting to <a href="${path.basename(this.outputFile)}">latest report</a>...</p></body></html>`
-    fs.writeFileSync(indexPath, latestRedirect)
+    // Jira receives index.html alone, so it must contain the actual report.
+    // Timestamped reports and history.html remain available for local history.
+    fs.writeFileSync(indexPath, html)
 
     this.generateHistoryPage(reportDir)
   }

@@ -69,9 +69,10 @@ npx playwright test --project=chromium
 
 ## Reports
 
-This project generates two report outputs:
+This project generates three report outputs:
 
-- Custom HTML report: `reports/TCOE-Report/`
+- Custom HTML report: `TCOE-Report/index.html` (complete latest report for Jira)
+- Xray JUnit results: `results/xray-results.xml`
 - Playwright standard HTML report: `reports/playwright-report/`
 
 Open the Playwright HTML report:
@@ -113,6 +114,12 @@ npm run format
 - The default Playwright configuration sets `baseURL` to `https://www.testmuai.com/`.
 - Screenshots, videos, and traces are enabled for each test run.
 - The reporting setup is configured in `playwright.config.ts`.
+
+## Jira / Xray integration
+
+The existing Tests retain their keys `TPA-5`, `TPA-6`, and `TPA-7`. Use the shared
+`xray()` helper for new tests to keep tags and static JUnit annotations in sync.
+See [Xray setup](docs/xray-integration.md) for runner configuration and validation.
 
 ## Contributing
 
