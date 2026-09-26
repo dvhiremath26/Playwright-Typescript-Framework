@@ -3,6 +3,8 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const environment = process.env.ENV || 'qa'
+
+
 export default defineConfig({
   metadata: {
         Environment: environment.toUpperCase(),
